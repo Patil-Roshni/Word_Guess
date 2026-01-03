@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">Word Guessing Game</h1>
+        
+        <div id="word-display" class="word-display">{{ display }}</div>
+        
+        <p class="attempts-text">Attempts Left: <span id="attempts-count">6</span></p>
+
+        <div class="button-row">
+            <div class="input-box">
+                <input type="text" id="letter-input" maxlength="1" placeholder="?">
+            </div>
+            <button id="guess-button" class="btn guess-btn">Guess</button>
+            <button id="reset-button" class="btn reset-btn">Reset Game</button>
+        </div>
+
+        <div class="status-area">
+            <p>Used Letters: <span id="used-letters"></span></p>
+            <h2 id="message"></h2>
+            <button id="play-again" class="btn hidden" onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
